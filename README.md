@@ -34,3 +34,15 @@ $ docker system prune   // 起動していないコンテナを全て削除す�
 
 $ docker build -t <name> <directory>   // ディレクトリ配下にあるDockerfileから名前付きイメージを作成する
 ```
+
+## Dockerfileのルール
+
+```Dockerfile
+FROM <ベースとなるDocker image>
+RUN <コンテナで実行するコマンド>
+```
+
+**ポイント**
+- DockerfileはRUNごとにイメージレイヤが作成されるので、なるべくRUNの数を減らすようにしたい。
+- Linuxコマンドは `&&` で繋げられるのでうまく活用する。
+- キャッシュを利用してビルドできるので、Dockerfileを作成する段階では、RUNを細かく分けていき、処理が確定した段階でコマンドを繋げるようにすると効率的。 
