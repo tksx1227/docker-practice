@@ -1,5 +1,5 @@
 # docker
-docker勉強用です。
+Docker勉強用です。
 
 ## コマンド集
 
@@ -31,4 +31,6 @@ $ docker push <image>   // Docker Hub にイメージをプッシュする
 $ docker rmi <image>   // イメージを削除する
 $ docker rm <container>   // コンテナを削除する
 $ docker system prune   // 起動していないコンテナを全て削除する
+
+$ docker build -t <name> <directory>   // ディレクトリ配下にあるDockerfileから名前付きイメージを作成する
 ```
