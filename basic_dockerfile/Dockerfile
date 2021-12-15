@@ -3,4 +3,4 @@ RUN apt-get update && apt-get install -y \
     curl \
     cvs \
     nginx
-    
+CMD ["ls", "-l", "-p"]
