@@ -38,9 +38,9 @@ $ docker build -t <name> <directory>   // ディレクトリ配下にあるDocke
 ## Dockerfileのルール
 
 ```Dockerfile
-FROM <ベースとなるDocker image>
-RUN <コンテナで実行するコマンド>
-CMD [ <command>, [param1, param2, ..., paramN] ]
+FROM <image>   // ベースとなる Docker image を指定する
+RUN <command>   // 実行するコマンドを記述する（image layerを作成）
+CMD [ <command>, [param1, param2, ..., paramN] ]   // コンテナ起動時に実行するコマンドを指定する
 ```
 
 **ポイント**
