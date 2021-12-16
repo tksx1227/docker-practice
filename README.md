@@ -40,6 +40,7 @@ $ docker build -t <name> <directory>   // ディレクトリ配下にあるDocke
 ```Dockerfile
 FROM <image>   // ベースとなる Docker image を指定する
 RUN <command>   // 実行するコマンドを記述する（image layerを作成）
+COPY <src> <dest>   // ホストにあるデータをコンテナ内にコピーする
 CMD [ <command>, [param1, param2, ..., paramN] ]   // コンテナ起動時に実行するコマンドを指定する
 ```
 
