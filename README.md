@@ -43,6 +43,7 @@ FROM <image>   // ベースとなる Docker image を指定する
 RUN <command>   // 実行するコマンドを記述する
 COPY <src> <dest>   // ホストにあるデータをコンテナ内にコピーする
 ADD <src> <dest>   // ホストにある圧縮ファイルをコンテナ内にコピーして解凍する
+ENV <key> <value>   // 環境変数を設定する
 CMD [ <command>, [param1, param2, ..., paramN] ]   // コンテナ起動時に実行するコマンドを指定する
 ```
 
