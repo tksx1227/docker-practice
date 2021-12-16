@@ -39,8 +39,9 @@ $ docker build -t <name> <directory>   // ディレクトリ配下にあるDocke
 
 ```Dockerfile
 FROM <image>   // ベースとなる Docker image を指定する
-RUN <command>   // 実行するコマンドを記述する（image layerを作成）
+RUN <command>   // 実行するコマンドを記述する
 COPY <src> <dest>   // ホストにあるデータをコンテナ内にコピーする
+ADD <src> <dest>   // ホストにある圧縮ファイルをコンテナ内にコピーして解凍する
 CMD [ <command>, [param1, param2, ..., paramN] ]   // コンテナ起動時に実行するコマンドを指定する
 ```
 
@@ -49,3 +50,4 @@ CMD [ <command>, [param1, param2, ..., paramN] ]   // コンテナ起動時に�
 - Linuxコマンドは `&&` で繋げられるのでうまく活用する。
 - キャッシュを利用してビルドできるので、Dockerfileを作成する段階では `RUN` を細かく分けていき、処理が確定した段階でコマンドを繋げるようにすると効率的。 
 - `RUN` はレイヤを作る。`CMD` はレイヤを作らない
+- ホストにあるデータをコンテナに共有する際、基本的には `COPY` を使い、サイズが大きいデータを共有するときは、圧縮した後 `ADD` を使う。
