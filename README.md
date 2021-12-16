@@ -15,6 +15,7 @@ $ docker run <image> <default command>   // コンテナ起動時に実行する
 $ docker run --name <container name> <image>   // 名前付きでコンテナを作成・起動する
 $ docker run -d <image>   // コンテナ起動後にプロセスをバックグラウンドに移動する
 $ docker run --rm <image>   // コンテナ起動・コマンド実行後にコンテナを削除する
+$ docker run -v <host dir>:<dest> <image>   // 指定したホストのフォルダをコンテナ内のフォルダにマウントする
 
 $ exit   // プロセスを終了してコンテナから抜ける
 $ ctrl + p + q   // コンテナを起動したままホストに戻る
