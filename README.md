@@ -33,6 +33,7 @@ $ docker rm <container>   // コンテナを削除する
 $ docker system prune   // 起動していないコンテナを全て削除する
 
 $ docker build -t <name> <directory>   // ディレクトリ配下にあるDockerfileから名前付きイメージを作成する
+$ docker -f <dockerfile name> build <directory>   // Dockerfile と build context のパスを指定してイメージを作成する
 ```
 
 ## Dockerfileのルール
