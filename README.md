@@ -15,7 +15,10 @@ $ docker run <image> <default command>   // コンテナ起動時に実行する
 $ docker run --name <container name> <image>   // 名前付きでコンテナを作成・起動する
 $ docker run -d <image>   // コンテナ起動後にプロセスをバックグラウンドに移動する
 $ docker run --rm <image>   // コンテナ起動・コマンド実行後にコンテナを削除する
-$ docker run -v <host dir>:<dest> <image>   // 指定したホストのフォルダをコンテナ内のフォルダにマウントする
+$ docker run -v <host/path>:<container/path> <image>   // 指定したホストのフォルダをコンテナ内のフォルダにマウントする
+$ docker run -u $(id -u):$(id -g) <image>   // 指定したユーザーでコンテナを使用する
+$ docker run -p <host port>:<container port> <image>   // ホストのポートとコンテナのポートを接続する
+$ docker run --cpus <num of CPUs> --memory <bytes> <image>   // 割り当てるリソースの上限を指定する
 
 $ exit   // プロセスを終了してコンテナから抜ける
 $ ctrl + p + q   // コンテナを起動したままホストに戻る
@@ -35,6 +38,8 @@ $ docker system prune   // 起動していないコンテナを全て削除す�
 
 $ docker build -t <name> <directory>   // ディレクトリ配下にあるDockerfileから名前付きイメージを作成する
 $ docker -f <dockerfile name> build <directory>   // Dockerfile と build context のパスを指定してイメージを作成する
+
+$ docker inspect <container>   // コンテナの情報を確認する
 ```
 
 ## Dockerfileのルール
