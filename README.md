@@ -78,5 +78,5 @@ CMD [ <command>, [param1, param2, ..., paramN] ]
 $ du -sh <file name>   # ファイルのデータサイズを表示する
 $ sh -x <sh file name>   # 指定したシェルスクリプトが持つオプションを表示する
 $ export PATH=<new path>:$PATH   # 追加したプログラムのパスを通す
-$ wsl2 --shutdown   # メモリ泥棒を締め出す
+$ wsl --shutdown   # メモリ泥棒を締め出す
 ```
