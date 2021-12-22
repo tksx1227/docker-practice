@@ -1,5 +1,8 @@
 version: "3"
 
+volumes:
+  db-data:
+
 services:
   web:
     build: .
@@ -7,5 +10,16 @@ services:
       - "3000:3000"
     volumes:
       - ".:/rails-app"
+    environment:
+      - "DATABASE_PASSWORD=postgres"
     tty: true
     stdin_open: true
+    depends_on:
+      - db
+    links:
+      - db
+  
+  db:
+    image: postgres
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
