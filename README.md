@@ -1,4 +1,5 @@
 # docker
+
 Docker勉強用です。
 
 ## コマンド集
@@ -71,6 +72,31 @@ CMD [ <command>, [param1, param2, ..., paramN] ]
 - ホストにあるデータをコンテナに共有する際、基本的には `COPY` を使い、サイズが大きいデータを共有するときは、圧縮した後 `ADD` を使う。
 - `WORKDIR` は可読性を高めるために絶対パスで指定するようにする。
 - `ENTRYPOINT` で指定したコマンドは `CMD` で指定したコマンドと異なり、コンテナ起動時に変更できない。
+
+## docker-compose.ymlのルール
+
+```yaml
+version: "3"
+
+services:
+  # サービスの名前を指定する（web or app が一般的らしい）
+  <service name>:
+    # Build context があるディレクトリを指定する
+    build: .
+    # パブリッシュするポートを指定する
+    ports:
+      - "<host port>:<container port>"
+    # マウントするディレクトリを指定する
+    volumes:
+      - "<host/path>:<container/path>"
+    # この2つで -it と同じ意味になる
+    tty: true
+    stdin_open: true
+```
+
+**用途**
+- `$ docker run` のコマンドが長くなる時
+- 複数のコンテナをまとめて起動するとき
 
 ## Linux コマンド集（おまけ）
 
