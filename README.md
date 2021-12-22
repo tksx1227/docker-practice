@@ -1,8 +1,8 @@
-# docker
+# docker-practice
 
 Docker勉強用です。
 
-## コマンド集
+## コマンド集（Docker）
 
 ```bash
 $ docker login   # ログイン
@@ -72,6 +72,18 @@ CMD [ <command>, [param1, param2, ..., paramN] ]
 - ホストにあるデータをコンテナに共有する際、基本的には `COPY` を使い、サイズが大きいデータを共有するときは、圧縮した後 `ADD` を使う。
 - `WORKDIR` は可読性を高めるために絶対パスで指定するようにする。
 - `ENTRYPOINT` で指定したコマンドは `CMD` で指定したコマンドと異なり、コンテナ起動時に変更できない。
+
+## コマンド集（docker-compose）
+
+```bash
+$ docker-compose build   # <=> $ docker build <build context>
+$ docker-compose up   # <=> $ docker run <image>
+$ docker-compose ps   # <=> $ docker ps
+$ docker-compose exec <service name> <command>   # <=> $ docker exec <container> <command>
+
+$ docker-compose up --build   # build + run
+$ docker-compose down   # stop + rm
+```
 
 ## docker-compose.ymlのルール
 
