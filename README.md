@@ -94,16 +94,27 @@ services:
   # サービスの名前を指定する（web or app が一般的らしい）
   <service name>:
     # Build context があるディレクトリを指定する
-    build: .
+    build: <build context path>
+    # image がある場合は build を指定せずにこっちを使う
+    image: <image name>
     # パブリッシュするポートを指定する
     ports:
       - "<host port>:<container port>"
     # マウントするディレクトリを指定する
     volumes:
       - "<host/path>:<container/path>"
+    # 環境変数を設定する
+    environment:
+      - "<key>=<value>"
     # この2つで -it と同じ意味になる
     tty: true
     stdin_open: true
+    # 依存関係のあるサービスを指定する
+    depends_on:
+      - <service name>
+    # サービス間で共有するコンテナを指定する
+    links:
+      - <service name>
 ```
 
 **用途**
