@@ -90,6 +90,10 @@ $ docker-compose down   # stop + rm
 ```yaml
 version: "3"
 
+# Docker Volume を指定する
+volume:
+  <volume name>:
+
 services:
   # サービスの名前を指定する（web or app が一般的らしい）
   <service name>:
